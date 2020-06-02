@@ -7,6 +7,10 @@ Requirements
 ------------
 In order to build dwm you need the Xlib header files.
 
+```
+sudo apt-get install git xorg libx11-dev libxft-dev libxinerama-dev xdm suckless-tools dmenu
+```
+
 
 Installation
 ------------
