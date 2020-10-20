@@ -5,8 +5,11 @@ include config.mk
 
 SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
+SUBDIRS = dwmstatus
 
-all: options dwm
+all: options dwm $(SUBDIRS)
+$(SUBDIRS):
+	$(MAKE) -C $@
 
 options:
 	@echo dwm build options:
@@ -48,4 +51,4 @@ uninstall:
 	rm -rf ${DESTDIR}${PREFIX}/bin/dwm\
 		${DESTDIR}${MANPREFIX}/man1/dwm.1\
 
-.PHONY: all options clean dist install uninstall
+.PHONY: all options clean dist install uninstall $(SUBDIRS)

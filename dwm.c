@@ -1377,6 +1377,9 @@ restack(Monitor *m)
 void
 run(void)
 {
+	/* Load statusbar*/
+	system("dwmstatus 2>&1 >/dev/null &");
+
 	XEvent ev;
 	/* main event loop */
 	XSync(dpy, False);
